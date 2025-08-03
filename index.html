@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Horizon - Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    <div id="notification-container"></div>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">Event Horizon</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#events-section" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="#about-us-section" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="#contact-section" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><button id="add-event-btn" class="btn btn-primary nav-add-btn"><i class="fas fa-plus-circle"></i> Add New Event</button></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Discover & Manage Your Next Unforgettable Event</h1>
+            <p>From tech conferences to local festivals, find and organize events with ease.</p>
+            <div class="hero-actions">
+                <a href="#events-section" class="btn btn-primary btn-lg">Explore Events</a>
+                <button id="add-event-btn-hero" class="btn btn-secondary btn-lg"><i class="fas fa-calendar-plus"></i> Create Event</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content container">
+
+        <section id="events-section" class="events-section">
+            <h2 class="section-title">Upcoming Events</h2>
+
+            <div class="filters-and-search">
+                <div class="filter-group">
+                    <label for="filter-category">Category:</label>
+                    <select id="filter-category" class="filter-select">
+                        <option value="all">All Categories</option>
+                        </select>
+                </div>
+                <div class="search-group">
+                    <label for="search-input" class="sr-only">Search Events</label>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search by title, location, description...">
+                    <button class="btn btn-icon"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="sort-group">
+                    <label for="sort-by">Sort By:</label>
+                    <select id="sort-by" class="sort-select">
+                        <option value="date-asc">Date (Ascending)</option>
+                        <option value="date-desc">Date (Descending)</option>
+                        <option value="price-asc">Price (Low to High)</option>
+                        <option value="price-desc">Price (High to Low)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="event-list-container" class="event-grid">
+                <p class="loading-message">Loading events...</p>
+            </div>
+
+            <div class="pagination-controls">
+                <button id="prev-page-btn" class="btn btn-secondary" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="page-info">Page 1 of 1</span>
+                <button id="next-page-btn" class="btn btn-secondary" disabled>Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="about-us-section" class="about-us-section">
+            <h2 class="section-title">About Event Horizon</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Event Horizon</strong> is your ultimate platform for discovering, managing, and attending events of all kinds. Our mission is to connect people through shared experiences, making event planning and participation seamless and enjoyable.</p>
+                    <p>We believe in the power of community and the magic of live events. Whether you're a seasoned organizer looking for a robust management tool or an eager attendee searching for your next adventure, Event Horizon provides the tools and connections you need.</p>
+                    <p>Our team is dedicated to providing a user-friendly experience, ensuring that every event, from small workshops to large conferences, is a success. Join our growing community and start exploring the world of events today!</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1505373877845-8f2a210026e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="About Event Horizon">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Host Your Own Event?</h2>
+                <p>Event Horizon offers powerful tools to plan, promote, and manage your events from start to finish. Get started now!</p>
+                <button id="add-event-btn-cta" class="btn btn-primary btn-lg"><i class="fas fa-calendar-plus"></i> Start Planning</button>
+            </div>
+        </section>
+
+        <section id="contact-section" class="contact-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Event Lane, Metro City, Kolkata, India</p>
+                    <h3>Email Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@eventhorizon.com</p>
+                    <h3>Call Us</h3>
+                    <p><i class="fas fa-phone"></i> +91 12345 67890</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email</label>
+                            <input type="email" id="contact-email" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="contactSubject">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col footer-about">
+                <h3>Event Horizon</h3>
+                <p>Connecting people through shared experiences. Discover and manage events with ease.</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#events-section">Events</a></li>
+                    <li><a href="#about-us-section">About Us</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest events and news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Event Horizon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Event Title</h2>
+            <div id="modal-body" class="modal-body">
+                <form id="event-form" class="event-form">
+                    <input type="hidden" id="event-id" name="id">
+
+                    <div class="form-group">
+                        <label for="event-title">Event Title <span class="required">*</span></label>
+                        <input type="text" id="event-title" name="title" required minlength="5" maxlength="100" placeholder="e.g., Annual Tech Summit">
+                        <div id="error-title" class="error-message"></div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="event-date">Date <span class="required">*</span></label>
+                            <input type="date" id="event-date" name="date" required>
+                            <div id="error-date" class="error-message"></div>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="event-time">Time <span class="required">*</span></label>
+                            <input type="time" id="event-time" name="time" required>
+                            <div id="error-time" class="error-message"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-location">Location <span class="required">*</span></label>
+                        <input type="text" id="event-location" name="location" required maxlength="200" placeholder="e.g., Grand Exhibition Hall, City Center">
+                        <div id="error-location" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-description">Description <span class="required">*</span></label>
+                        <textarea id="event-description" name="description" rows="6" required minlength="20" placeholder="Provide a detailed description of your event, what attendees can expect, and key highlights."></textarea>
+                        <div id="error-description" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-category">Category <span class="required">*</span></label>
+                        <select id="event-category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Food">Food & Drink</option>
+                            <option value="Arts">Arts & Culture</option>
+                            <option value="Music">Music</option>
+                            <option value="Sports">Sports & Fitness</option>
+                            <option value="Business">Business & Networking</option>
+                            <option value="Education">Education & Workshops</option>
+                            <option value="Health">Health & Wellness</option>
+                            <option value="Community">Community & Charity</option>
+                            <option value="Online">Online / Virtual</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div id="error-category" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-image-url">Image URL</label>
+                        <input type="url" id="event-image-url" name="imageUrl" placeholder="e.g., https://example.com/event-banner.jpg">
+                        <div id="error-image-url" class="error-message"></div>
+                        <small class="form-hint">Provide a direct link to an image for your event card.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="event-price">Ticket Price ($) <span class="required">*</span></label>
+                            <input type="number" id="event-price" name="price" step="0.01" min="0" value="0" required placeholder="e.g., 25.00 for paid, 0 for free">
+                            <div id="error-price" class="error-message"></div>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="event-capacity">Capacity <span class="required">*</span></label>
+                            <input type="number" id="event-capacity" name="capacity" min="1" value="100" required placeholder="Max number of attendees">
+                            <div id="error-capacity" class="error-message"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-submit-event">Save Event</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-confirm-modal" class="modal">
+        <div class="modal-content small-modal">
+            <span class="close-button" id="close-delete-modal">&times;</span>
+            <h2 class="modal-title-confirm"><i class="fas fa-exclamation-triangle"></i> Confirm Deletion</h2>
+            <div class="modal-body-confirm">
+                <p>Are you sure you want to delete the event: "<strong id="delete-event-title"></strong>"?</p>
+                <p class="text-danger">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer-confirm">
+                <button id="confirm-delete-btn" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button>
+                <button id="cancel-delete-btn" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
